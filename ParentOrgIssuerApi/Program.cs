@@ -1,6 +1,7 @@
-using ParentOrgIssuerApi.Context;
-using ParentOrgIssuerApi.Contracts;
-using ParentOrgIssuerApi.Repository;
+using IssuerIssuerApi.Repository;
+using HealthInsuranceCaseworkApi.Context;
+using HealthInsuranceCaseworkApi.Contracts;
+using HealthInsuranceCaseworkApi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IParentOrgRepository, ParentOrgRepository>();
+builder.Services.AddScoped<IIssuerRepository, IssuerRepository>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
@@ -21,7 +23,9 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
+
 
 
 app.UseHttpsRedirection();

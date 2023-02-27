@@ -1,13 +1,13 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
-using ParentOrgIssuerApi.Contracts;
+using HealthInsuranceCaseworkApi.Contracts;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ParentOrgIssuerApi.Dto;
+using HealthInsuranceCaseworkApi.Dto;
 
-namespace ParentOrgIssuerApi.Controllers
+namespace HealthInsuranceCaseworkApi.Controllers
 {
     [Route("api/ParentOrgs")]
     [ApiController]
@@ -45,6 +45,42 @@ namespace ParentOrgIssuerApi.Controllers
                     return NotFound();
 
                 return Ok(parentorg);
+            }
+            catch (Exception ex)
+            {
+                //log error
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("GetByParentOrgByIssuer/{id}", Name = "ParentOrgByIssuerID")]
+        public async Task<IActionResult> GetParentOrgByIssuer(string id)
+        {
+            try
+            {
+                var issuers = await _parentorgrepo.GetParentOrgByIssuer(id);
+                if (issuers == null)
+                    return NotFound();
+
+                return Ok(issuers);
+            }
+            catch (Exception ex)
+            {
+                //log error
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("GetParentOrgByUser/{id}", Name = "ParentOrgbyUser")]
+        public async Task<IActionResult> GetParentOrgByUser(string id)
+        {
+            try
+            {
+                var users = await _parentorgrepo.GetParentOrgByUser(id);
+                if (users == null)
+                    return NotFound();
+
+                return Ok(users);
             }
             catch (Exception ex)
             {
@@ -173,5 +209,6 @@ namespace ParentOrgIssuerApi.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+        
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace ParentOrgIssuerApi.Context
+namespace HealthInsuranceCaseworkApi.Context
 {
     public class DapperContext
     {

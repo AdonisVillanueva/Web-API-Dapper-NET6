@@ -1,10 +1,8 @@
-﻿using System.Reflection;
-
-namespace HealthInsuranceCaseworkApi.Models
+﻿namespace HealthInsuranceCaseworkApi.Dto
 {
-    public class Issuer
+    public class IssuerForCreationDto
     {
-        public int ID { get; set; }
+  
         public string ISSUER_STATE { get; set; }
         public string ISSUER_ID { get; set; }
         public string ISSUER_NAME { get; set; }
@@ -61,7 +59,5 @@ namespace HealthInsuranceCaseworkApi.Models
         public string COMPLIANCE_CNTCT_PHONE { get; set; }
         public string COMPLIANCE_CNTCT_EXT { get; set; }
         public string COMPLIANCE_CNTCT_EMAIL { get; set; }
-        public List<UserInfo> Users { get; set; } = new List<UserInfo>();
     }
-
 }

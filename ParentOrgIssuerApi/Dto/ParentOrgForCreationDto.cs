@@ -1,4 +1,4 @@
-﻿namespace ParentOrgIssuerApi.Dto
+﻿namespace HealthInsuranceCaseworkApi.Dto
 {
     public class ParentOrgForCreationDto
     {

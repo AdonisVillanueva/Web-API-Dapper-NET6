@@ -1,4 +1,4 @@
-﻿namespace ParentOrgIssuerApi.Utils
+﻿namespace HealthInsuranceCaseworkApi.Utils
 {
     public class Util
     {

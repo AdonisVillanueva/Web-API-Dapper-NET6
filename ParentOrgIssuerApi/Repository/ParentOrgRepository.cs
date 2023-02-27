@@ -1,11 +1,11 @@
 ﻿using Dapper;
 using System.Data;
-using ParentOrgIssuerApi.Context;
-using ParentOrgIssuerApi.Contracts;
-using ParentOrgIssuerApi.Models;
-using ParentOrgIssuerApi.Dto;
+using HealthInsuranceCaseworkApi.Context;
+using HealthInsuranceCaseworkApi.Contracts;
+using HealthInsuranceCaseworkApi.Models;
+using HealthInsuranceCaseworkApi.Dto;
 
-namespace ParentOrgIssuerApi.Repository
+namespace HealthInsuranceCaseworkApi.Repository
 {
     public class ParentOrgRepository : IParentOrgRepository
     {
@@ -63,9 +63,22 @@ namespace ParentOrgIssuerApi.Repository
             }
         }
 
-        public async Task<IEnumerable<UserInfo>> GetUsersByParentOrg(int id)
+        public async Task<ParentOrg> GetParentOrgByIssuer(string id)
         {
-            var query = "SELECT * FROM [USERACCESS].[USERINFO] WHERE PARENT_ID = @Id";
+            var query = "SELECT * FROM [USERACCESS].[PARENT_ORGS] JOIN [USERACCESS].[ISSUER_X_PARENT_ORGS] " +
+                "x on x.PARENT_ID = p.PARENT_ID WHERE ISSUER_ID = @Id ORDER BY [ISSUER_ID];";
+
+            using (var connection = _context.CreateConnection())
+            {
+                var parentorg = await connection.QuerySingleOrDefaultAsync<ParentOrg>(query, new { id });
+
+                return parentorg;
+            }
+        }
+
+        public async Task<IEnumerable<UserInfo>> GetParentOrgByUser(string id)
+        {
+            var query = "SELECT * FROM [USERACCESS].[PARENT_ORGS] WHERE USER_ID = @Id";
 
             using (var connection = _context.CreateConnection())
             {
@@ -106,7 +119,7 @@ namespace ParentOrgIssuerApi.Repository
 
             var parameters = new DynamicParameters();
             parameters.Add("ParentId", id, DbType.Int32);
-            parameters.Add("Name", ParentOrg.ParentName, DbType.String);
+            parameters.Add("Name", ParentOrg.PARENT_NAME, DbType.String);
 
             using (var connection = _context.CreateConnection())
             {

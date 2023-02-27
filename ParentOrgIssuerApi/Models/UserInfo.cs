@@ -1,4 +1,4 @@
-﻿namespace ParentOrgIssuerApi.Models
+﻿namespace HealthInsuranceCaseworkApi.Models
 {
     public class UserInfo
     {
@@ -26,6 +26,6 @@
         public string LAST_DEACTIVATION_USER { get; set; }
         public string DEACTIVATION_REASON { get; set; }
         public int? COMPONENT { get; set; }
-        public int? ParentID { get; set; }
+        public int? PARENT_ID { get; set; }
     }
 }

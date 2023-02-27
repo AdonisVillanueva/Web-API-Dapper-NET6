@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "ParentOrgIssuerApi": {
+    "HealthInsuranceCaseworkApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
