@@ -1,2 +1,1 @@
-# Web-API-Dapper-NET6
- 
+Web API project developed in .Net 6 and using Dapper ORM. 
