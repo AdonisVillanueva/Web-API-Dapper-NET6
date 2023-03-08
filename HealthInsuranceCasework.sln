@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthInsuranceCaseworkApi.Tests", "HealthInsuranceCaseworApi.Tests\HealthInsuranceCaseworkApi.Tests.csproj", "{91B9AEE8-D528-459F-9399-B500C39FDDA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HealthInsuranceCaseworkApi.Tests", "HealthInsuranceCaseworkApi.Tests\HealthInsuranceCaseworkApi.Tests.csproj", "{6D6D1576-A2F1-4840-9DFF-AD93A9261EB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{9B9ADF13-EC9D-4231-93B4-E16B544B09F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B9ADF13-EC9D-4231-93B4-E16B544B09F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B9ADF13-EC9D-4231-93B4-E16B544B09F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{91B9AEE8-D528-459F-9399-B500C39FDDA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91B9AEE8-D528-459F-9399-B500C39FDDA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91B9AEE8-D528-459F-9399-B500C39FDDA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91B9AEE8-D528-459F-9399-B500C39FDDA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6D1576-A2F1-4840-9DFF-AD93A9261EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6D1576-A2F1-4840-9DFF-AD93A9261EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6D1576-A2F1-4840-9DFF-AD93A9261EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D6D1576-A2F1-4840-9DFF-AD93A9261EB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
